@@ -9,6 +9,7 @@ export const FeedbackWidget = ({ options, onLeaveFeedback }) => {
         <Button
           key={option}
           type="button"
+          name={option}
           onClick={() => onLeaveFeedback(option)}
         >
           {option}

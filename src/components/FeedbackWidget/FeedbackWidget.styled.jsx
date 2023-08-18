@@ -18,7 +18,26 @@ export const Button = styled.button`
   &:hover,
   &:focus {
     color: white;
-    background-color: blue;
+    background-color: ${({ name }) => getColor(name)};
     cursor: pointer;
   }
 `;
+
+function getColor(name) {
+  let result;
+  switch (name) {
+    case 'good':
+      result = 'green';
+      break;
+    case 'neutral':
+      result = 'orange';
+      break;
+    case 'bad':
+      result = 'red';
+      break;
+    default:
+      result = 'white';
+      break;
+  }
+  return result;
+}
